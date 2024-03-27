@@ -1,0 +1,55 @@
+
+If we import the react on the our project we will simple use CDN links (cdn react).
+'it is not a good way to use react from CDN links'
+//
+=>React file making by myself
+1- npm init 
+2-  npm install -D parcel(parcel is a huge library for igniting the our app )
+
+carat(^)and tilde(-)
+carat-It is used for upgrading minor updates in the version if in feature new version is come so carat will automatically upgrade the version.
+tilde-It is also used for upgrading the version but fro mazor version upgrading .
+
+package.json -It is the configure of npm ,it keeps the trake of what version is install in the app.
+package-lock.json-it stores exact version of the package .
+node-modules- It is the collection of dependencies.
+
+3- npx parcel index.html(for going on server port localhost:1234)now our app will show on the localhost right now
+4- npm install react
+5- npm i react-dom
+6- npx parcel built index2.html(first remove 'main' entry file from package.json file)
+npm run start = npm start
+
+* const header = React.createElement("in this there is a tag e.g-h1,p,etc",{and in this there will object to  be a atrributes for the code e.g-id},"children of the heading as a string and text also ")
+* React.createElement(react element) =>js object(its is a object) =>html element(when render on to the dom it change it into html element).
+
+NOTE-We use react without jsx but its clingy or not a good way to make from that so we use JSX it is easy for developer ..(JSX and react are different  they are not same ).
+* JSX = html like syntex but not html or javascript or not xml .
+
+--------------COMPARISON CODE---------------
+
+This is core React element for H1 tag--
+const heading = React.createElement("h1",{ id: "heading" },"Hey its me SHIVAM");
+
+AND this is in jsx  code the same code---
+const jsxheading = <h1 id="heading">Nameste shivam using jsx</h1>
+these both are same code 
+
+--------------END COMPARISION--------------------------
+
+BABEL is a javascript compilar and babel is a part of parcel .
+
+jsx =>react element (with help of babel the jsx code convert it into react element)=> html element.
+
+# REACT COMPONENTS:-
+1-Class Based COMPONENTS : OLD style for the coding.
+2-Functional Based COMPONENTS :NEW style for the coding(It is a just JAVASCRIPT components).
+
+React functional componet is the function which return some peace of JSX code and react element.
+
+If we want to rendered the functional component we simply use '<functional component/>'.
+
+Q1-What is the componet composition ?
+Ans.- Components inside another component is called component composition.
+
+

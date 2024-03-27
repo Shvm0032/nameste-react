@@ -1,0 +1,30 @@
+{
+  "name": "nameste-react",
+  "version": "1.0.0",
+  "description": "This is nameste react by shivam butola",
+ 
+  "scripts": {
+    "start": "parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shvm0032/nameste-react.git"
+  },
+  "keywords": [],
+  "author": "Shivam Butola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shvm0032/nameste-react/issues"
+  },
+  "homepage": "https://github.com/Shvm0032/nameste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
