@@ -1,3 +1,58 @@
-#heading {
-    color: red;
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.logo{
+    width: 100px;
+}
+
+.nav-items{
+padding: 0px 2px;
+}
+
+.nav-items > ul{
+    display: flex;
+    list-style-type: none;
+    font-size: 20px;
+
+}
+
+.nav-items > ul > li{
+    padding: 10px;
+    margin: 10px;
+}
+
+.search{
+    padding: 5px;
+}
+
+.restro-conatainer{
+    display: flex;
+    flex-wrap: wrap ;
+    
+}
+.restro-card{
+    /* height: 400px; */
+    width: 400px;
+    padding: 5px; 
+    margin: 15px;
+    align-content: center;
+    text-align: center;
+    background-color:#e0eeee;
+    transition: transform .2s;
+}
+
+.restro-card:hover{
+    cursor: pointer;
+    border: 1px solid rgb(84, 217, 240);
+    background-color:#a2d2df;
+    color:rgb(218, 58, 27);
+    transform: scale(1.1);
+}
+
+.food-logo{
+    width:100% ;
+
 }

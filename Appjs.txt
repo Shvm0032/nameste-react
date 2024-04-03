@@ -1,6 +1,7 @@
 
 //This is the basic code for react that how we will do in react  div and other things else.//
 
+----------------APP.js-----------------------
 import React from "react";
 import  ReactDOM  from "react-dom/client";
 
@@ -35,7 +36,9 @@ const parent = React.createElement(
     ]
 );
 
+----------------APP2.js-----------------------
 //App2.js//
+
 {
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -54,6 +57,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(jsxHeading);
 }
 
+----------------APP3.js-----------------------
 //App3.js//
 import React from "react";
 import ReactDOM from "react-dom/client";
