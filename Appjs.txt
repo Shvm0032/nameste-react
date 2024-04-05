@@ -88,3 +88,5 @@ const HeadingComponent = () => (
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<HeadingComponent/>);
+
+-When ever the state variables changes the react rerendered the component..

@@ -1,31 +1,72 @@
 //Body Component//
 import ResturantCards from "./ResturantCards";
 import resList from "../utils/resturantData";
+import { useState,useEffect } from "react";
+import Shimmer from "./Shimmer";
 
+const Body = () => {
+  //State Variable = super powerfull variable(react hook)//
+  const [listofRestro,setlistofRestro] = useState([]);
+  const [filteredRestro,setFilteredRestro] = useState([]);
+  const [searchText,setSearchText] = useState("");
 
-const Body = () =>{
+  console.log("body rendered")
+  useEffect(() => {
+    fetchData();
+  },[]);
 
-    return(
-      <div className="body">
-     <div className="search">Search</div>
-     <div className="restro-conatainer">
-  
-      {/* ------------this is for limited data if we have multiples of data than we use map loop----------------- */}
-      {/* <ResturantCards  resData={resList[0]}/>
-      <ResturantCards  resData={resList[1]}/>
-      <ResturantCards  resData={resList[2]}/>
-      <ResturantCards  resData={resList[3]}/>
-      <ResturantCards  resData={resList[4]}/>
-      <ResturantCards  resData={resList[5]}/>
-      <ResturantCards  resData={resList[6]}/>
-      <ResturantCards  resData={resList[7]}/> */}
-  
-      {/* ------------Now i will do this from map loop so that i can get all the data------------- */}
-      {
-        resList.map((resturant) => (<ResturantCards key={resturant.info.id} resData={resturant}/>))
-      }
-     </div>
-      </div>
-    )
+  const fetchData = async() => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      );
+      const json = await data.json();
+      //---optional chaining (?)------//
+
+      setlistofRestro(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setFilteredRestro(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
-  export default Body;
+  //------Conditional Rendering-------//
+  // if(listofRestro.length === 0){
+  //  return <Shimmer/>
+  // }
+
+  return listofRestro.length === 0 ? (<Shimmer/>):(
+    <div className="body">
+      <div className="filter">
+
+        <div className="search-bar">
+          <input type="text" className="search-box" value={searchText} onChange={(e) =>
+             {setSearchText(e.target.value)}
+             }/>
+          <button onClick={() => {
+           const filterlistofRestro = listofRestro.filter((res) =>
+            res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+            setFilteredRestro(filterlistofRestro);
+
+            console.log(filterlistofRestro);
+          }}
+          >Search</button>
+        </div>
+
+        <button
+          className="filter-btn"
+          onClick={() => {
+            const listofFilterRestro = listofRestro?.filter((res) => res.info.avgRating > 4);
+            setlistofRestro(listofFilterRestro)
+          }}
+        >
+          Top Rated Restro{" "}
+        </button>
+      </div>
+      <div className="restro-conatainer">
+        {/* ------------Now i will do this from map loop so that i can get all the data------------- */}
+
+        {filteredRestro?.map((resturant) => (
+
+          <ResturantCards key={resturant.info.id} resData={resturant} />
+        ))} 
+      </div>
+    </div>
+  );
+};
+export default Body;
