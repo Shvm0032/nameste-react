@@ -12,15 +12,28 @@ const ResturantCards = (props) =>{
        = resData?.info;
        
     return(
-      <div className="restro-card " >
-        <img className="food-logo"  
+      <div className="restro-card m-4 p-4 w-[400px] bg-slate-100 rounded-lg hover:bg-yellow-50" >
+        <img className="food-logo rounded-lg"  
         src={CDN_FOOD_LINK + cloudinaryImageId }/>
-        <h3>{name}</h3>
+        <h3 className="font-bold py-3 text-lg">{name}</h3>
         <h4>{cuisines.join(", ")}</h4>
         <h4>{avgRating}</h4>
         <h4>{costForTwo}</h4>
         <h4>{sla?.slaString}</h4>
       </div>
     )
-  }
+  };
+
+  //Highere order component//
+  export const withStarRating = (ResturantCards) =>{
+    return(props) => {
+      return(
+        <div>
+          <label className="absolute p-1 m-1 bg-orange-400 text-white rounded-lg">TOP RATED</label>
+          <ResturantCards {...props}/>
+        </div>
+      )
+    }
+  };
+
   export default ResturantCards;

@@ -5,38 +5,38 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
-  const [loginLogoutBtn, setLoginLogoutBtn] = useState("Login");
+  const [loginLogoutBtn, setLoginLogoutBtn] = useState(" Login ");
 const OnlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
+    <div className="header flex justify-between shadow-lg p-2 py-1 h-36 sm:bg-slate-400 lg:bg-gray-300">
       <div className="logo-container">
-        <img className="logo" src={CDN_APP_LOGO} />
+        <img className="logo w-32  h-25" src={CDN_APP_LOGO} />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>
+      <div className="nav-items flex items-center ">
+        <ul className="flex p-4 m-4 text-lg ">
+          <li className="px-2">
             Online Status : {OnlineStatus ? "✅" : "🔴"}
           </li>
-          <li>
+          <li className="px-2">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-2">
           <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="px-2">
           <Link to="/contact">Contact</Link>
           </li>
-          <li>
+          <li className="px-2">
           <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
+          <li className="px-2">Cart</li>
           <button
-            className="Login-btn"
+            className="Login-btn bg-green-400 border border-solid border-green-500 px-4 py-.1 rounded-sm"
             onClick={() => {
-              loginLogoutBtn === "Login"
-                ? setLoginLogoutBtn("Logout")
-                : setLoginLogoutBtn("Login");
+              loginLogoutBtn === " Login "
+                ? setLoginLogoutBtn(" Logout ")
+                : setLoginLogoutBtn(" Login ");
             }}
           >
             {loginLogoutBtn}

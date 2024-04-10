@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LIST_RESTRO_API } from "../utils/links";
+import { LIST_RESTRO_API } from "./links";
 
 const useListOfRestro = () => {
   const [listofRestro, setlistofRestro] = useState([]);

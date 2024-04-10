@@ -15,13 +15,13 @@ const User = (props) => {
   const {name,location,company,avatar_url,bio,id} = gitData;
 
   return (
-    <div className="user-card">
-      <img src={avatar_url}/>
-      <h2>Id : {id}</h2>
-      <h2>Name : {name}</h2>
-      <h2>Bio : {bio}</h2>
-      <h2>Location : {location}</h2>
-      <h3>Company : {company}</h3>
+    <div className="user-card p-5 border border-solid border-gray-500 w-[500px] rounded-lg">
+      <img className="rounded-md" src={avatar_url}/>
+      <h2 className="p-3 text-lg">Id : <span className="text-fuchsia-700">{id}</span></h2>
+      <h2 className="p-3">Name : <span className="text-fuchsia-700">{name}</span></h2>
+      <h2 className="p-3">Bio : <span className="text-fuchsia-700">{bio}</span></h2>
+      <h2 className="p-3">Location :  <span className="text-fuchsia-700">{location}</span></h2>
+      <h3 className="p-3">Company :  <span className="text-fuchsia-700">{company}</span></h3>
     </div>
   );
 };
