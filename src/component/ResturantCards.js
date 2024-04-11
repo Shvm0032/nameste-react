@@ -29,7 +29,7 @@ const ResturantCards = (props) =>{
     return(props) => {
       return(
         <div>
-          <label className="absolute p-1 m-1 bg-orange-400 text-white rounded-lg">TOP RATED</label>
+          <label className="absolute p-2  m-1 bg-orange-400 text-white rounded-lg">TOP RATED</label>
           <ResturantCards {...props}/>
         </div>
       )
