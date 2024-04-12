@@ -64,3 +64,45 @@ export default User;
 4-on demand loading
 5-lazy loading
 6-dynamic bundling
+
+# High order component :-
+  //Highere order component in (Resturant cards)//
+  export const withStarRating = (ResturantCards) =>{
+    return(props) => {
+      return(
+        <div>
+          <label className="absolute p-2  m-1 bg-orange-400 text-white rounded-lg">TOP RATED</label>
+          <ResturantCards {...props}/>
+        </div>
+      )
+    }
+  };
+  And anothere in (body)
+   {filteredRestro?.map((resturant) => (
+          <Link key={resturant.info.id} to={"/resturants/" + resturant.info.id }>
+
+            //------- //if the resturant is promoted then  add the promoted cards// --------//
+            {resturant?.info?.avgRating > 4 ? (
+              <ResturantCardsPromted resData={resturant}/>
+            ) : (
+              <ResturantCards resData={resturant} />
+            )}
+          </Link>
+        ))};
+
+# Accordian (Lifting the state):-
+ // Use Accordian for this loop (ResturantMenu)//
+      {categories?.map((category,index) => (
+        <ResturantCategory 
+        key={category?.card?.card?.title} 
+        data={category?.card?.card}
+         showItems={index === showIndex ? true : false}
+         setShowIndex = {() => setShowIndex (index)}
+          />
+      ))};
+  //use in the (ResturantCategory)//
+  const ResturantCategory = ({ data,showItems,setShowIndex }) => {
+  const accordianheadclick = () => {
+    setShowIndex();
+
+

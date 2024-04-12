@@ -12,7 +12,7 @@ const ResturantCards = (props) =>{
        = resData?.info;
        
     return(
-      <div className="restro-card m-4 p-4 w-[400px] bg-slate-100 rounded-lg hover:bg-yellow-50" >
+      <div className="restro-card m-4 p-4 w-[300px] bg-slate-100 rounded-lg hover:bg-yellow-100" >
         <img className="food-logo rounded-lg"  
         src={CDN_FOOD_LINK + cloudinaryImageId }/>
         <h3 className="font-bold py-3 text-lg">{name}</h3>

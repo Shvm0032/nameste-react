@@ -21,16 +21,18 @@ const ItemList = ({ items }) => {
             </div>
             </div>
             <div className="w-3/12 p-2">
-              <div className="absolute">
-                <button className="p-2 my-20 mx-12 bg-white shadow-lg m-auto">
-                  + ADD +
+              <div className="absolute ">
+                <button className="py-1 px-2 my-14 mx-10   bg-black text-white shadow-lg rounded-lg">
+                   Add 
                 </button>
               </div>
-              <img
-                className=""
-                src={CDN_FOOD_LINK + item?.card?.info?.imageId}
-              />
-         
+              {
+                item?.card?.info?.imageId && ( <img
+                  className=""
+                  src={CDN_FOOD_LINK + item?.card?.info?.imageId }
+                />
+                )
+              }
           </div>
         </div>
       ))}

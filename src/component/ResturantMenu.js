@@ -3,11 +3,14 @@ import { useParams } from "react-router-dom";
 import useResturantMenu from "../utils/useResturantMenu";
 import { CDN_FOOD_LINK } from "../utils/links";
 import ResturantCategory from "./ResturantCategory";
+import { useState } from "react";
 
 const ResturantMenu = (props) => {
   const { resId } = useParams();
-  const { resData } = props;
+  // const { resData } = props;
   const resInfo = useResturantMenu(resId);
+  const[showIndex,setShowIndex] = useState(0);
+
 
   if (resInfo === null) return <Shimmer />;
   const { name, costForTwoMessage, cuisines, sla, cloudinaryImageId } =
@@ -26,10 +29,6 @@ const ResturantMenu = (props) => {
 
   return (
     <div className="text-center">
-      {/* <img
-          src={CDN_FOOD_LINK + cloudinaryImageId}
-          alt="foor image"
-        /> */}
       <h1 className="font-bold my-6 text-2xl">{name}</h1>
       <p className="font-bold text-lg my-4">
         {cuisines.join(",")} - {costForTwoMessage}
@@ -37,9 +36,13 @@ const ResturantMenu = (props) => {
       <h2 className="font-bold text-lg my-4">{sla.slaString}</h2>
 
       {/* Use Accordian for this loop */}
-
-      {categories?.map((category) => (
-        <ResturantCategory key={category?.card?.card?.itemCards?.title} data={category?.card?.card} />
+      {categories?.map((category,index) => (
+        <ResturantCategory 
+        key={category?.card?.card?.title} 
+        data={category?.card?.card}
+         showItems={index === showIndex ? true : false}
+         setShowIndex = {() => setShowIndex (index)}
+          />
       ))}
     </div>
   );

@@ -58,7 +58,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="restro-conatainer flex flex-wrap px-36">
+      <div className="restro-conatainer flex flex-wrap ml-28">
         {/* ------------Now i will do this from map loop so that i can get all the data------------- */}
 
         {filteredRestro?.map((resturant) => (
