@@ -5,6 +5,7 @@ import { CDN_FOOD_LINK } from "../utils/links";
 import ResturantCategory from "./ResturantCategory";
 import { useState } from "react";
 
+
 const ResturantMenu = (props) => {
   const { resId } = useParams();
   // const { resData } = props;
@@ -13,6 +14,7 @@ const ResturantMenu = (props) => {
 
 
   if (resInfo === null) return <Shimmer />;
+  const dummy = "dummy"
   const { name, costForTwoMessage, cuisines, sla, cloudinaryImageId } =
     resInfo?.cards[2]?.card?.card?.info;
 
@@ -42,10 +44,12 @@ const ResturantMenu = (props) => {
         data={category?.card?.card}
          showItems={index === showIndex ? true : false}
          setShowIndex = {() => setShowIndex (index)}
+       
           />
       ))}
     </div>
   );
 };
+
 
 export default ResturantMenu;

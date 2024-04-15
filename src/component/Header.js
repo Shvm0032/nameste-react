@@ -1,12 +1,16 @@
 //Header Component//
 import { CDN_APP_LOGO } from "../utils/links";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import userContext from "../utils/userContext";
+
 
 const Header = () => {
   const [loginLogoutBtn, setLoginLogoutBtn] = useState(" Login ");
 const OnlineStatus = useOnlineStatus();
+const {loggedInUser} = useContext(userContext)
+console.log(loggedInUser);
 
   return (
     <div className="header flex justify-between shadow-lg p-2 py-1 h-36 sm:bg-slate-400 lg:bg-gray-300">
@@ -41,6 +45,7 @@ const OnlineStatus = useOnlineStatus();
           >
             {loginLogoutBtn}
           </button>
+          <li className="px-2"><span className="text-orange-600">{loggedInUser}</span></li>
         </ul>
       </div>
     </div>
