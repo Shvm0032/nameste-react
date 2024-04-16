@@ -66,7 +66,7 @@ export default User;
 6-dynamic bundling
 
 # High order component :-
-  //Highere order component in (Resturant cards)//
+  🔷//Highere order component in (Resturant cards)//
   export const withStarRating = (ResturantCards) =>{
     return(props) => {
       return(
@@ -91,7 +91,7 @@ export default User;
         ))};
 
 # Accordian (Lifting the state):-
- // Use Accordian for this loop (ResturantMenu)//
+ ❗// Use Accordian for this loop (ResturantMenu)//
       {categories?.map((category,index) => (
         <ResturantCategory 
         key={category?.card?.card?.title} 
@@ -100,9 +100,18 @@ export default User;
          setShowIndex = {() => setShowIndex (index)}
           />
       ))};
-  //use in the (ResturantCategory)//
+  ❗//use in the (ResturantCategory)//
   const ResturantCategory = ({ data,showItems,setShowIndex }) => {
   const accordianheadclick = () => {
     setShowIndex();
 
+# Redux toolkit :-
+# Boilerplate : 
+ 🔷It is a complete component with responsive we dont need to write the code for the any form or any component we get the whole component from somewhere else that piece of code is boilerplate. It is basically a copy paste of older code to the new project and than modify it.
 
+# Using Redux in cart when add the item the cart show number of items in it --
+
+  🔶 Add(when click on the add button)➡️➡️Action (Dispatch the action)➡️➡️Call the function(Reducer)➡️➡️modify the Card(modify the Redux store ).➡️➡️Selector.
+
+  🔷Selector (from the redux store card seletor will give you data in the cart that how many item is selcted).
+  # Selector is Subscribing To The Store.

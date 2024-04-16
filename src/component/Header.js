@@ -34,7 +34,7 @@ console.log(loggedInUser);
           <li className="px-2">
           <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-2">Cart</li>
+          <li className="px-2">🛒</li>
           <button
             className="Login-btn bg-green-400 border border-solid border-green-500 px-4 py-.1 rounded-sm"
             onClick={() => {

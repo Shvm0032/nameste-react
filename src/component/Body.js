@@ -1,12 +1,13 @@
 //Body Component//
 import ResturantCards, { withStarRating } from "./ResturantCards";
 import resList from "../utils/resturantData";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import OfflinePage from "./OfflinePage";
 import useListOfRestro from "../utils/useListOfRestro";
+import userContext from "../utils/userContext";
 
 const Body = () => {
   //State Variable = super powerfull variable(react hook)//
@@ -17,6 +18,8 @@ const Body = () => {
 
   //Checking logic for online status and internet connection//
   const OnlineStatus = useOnlineStatus();
+  const {setUserName,loggedInUser} = useContext(userContext);
+  
 
   if (OnlineStatus === false)
     return (
@@ -56,6 +59,10 @@ const Body = () => {
           >
             Top Rated Restro{" "}
           </button>
+        </div>
+        <div className="search-bar p-4 m-2 flex items-center ">
+          <label className="text-blue-500">UserName :  </label>
+          <input className="border  border-green-500 px-2 text-red-500" value={loggedInUser} onChange={(e) => setUserName(e.target.value)}/>
         </div>
       </div>
       <div className="restro-conatainer flex flex-wrap ml-28">

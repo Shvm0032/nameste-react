@@ -1,7 +1,10 @@
 import User from "./User";
 import UserClass from "./UserClass";
+import userContext from "../utils/userContext";
+import { useContext } from "react";
 
 const About = () => {
+  const {loggedInUser} = useContext(userContext);
   return (
     <div>
       <center>
@@ -9,9 +12,11 @@ const About = () => {
         <hr />
       </center>
       <div className="about-info p-8 font-bold">
+        <h1>{loggedInUser}</h1>
         <h1 className="text-xl p-4">User Information :- </h1>
 
         <User
+       
           name={"Shivam Butola (function)"}
           location={"Dehradun function"}
           email={"function@gmail.com"}
