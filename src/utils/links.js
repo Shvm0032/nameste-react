@@ -14,3 +14,6 @@ export const LIST_RESTRO_API =
 
  export const GITHUB_USER_DATA =
  "https://api.github.com/users/Shvm0032";
+
+ export const EMPTY_CART_IMAGE = 
+"https://www.flaticon.com/free-icon/empty-cart_11329060";

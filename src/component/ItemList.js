@@ -2,15 +2,13 @@ import { useDispatch } from "react-redux";
 import { CDN_FOOD_LINK } from "../utils/links";
 import { addItem } from "../utils/Redux/cardSlice";
 
-
 const ItemList = ({ items }) => {
-  // console.log(items);
   const Dispatch = useDispatch();
-  const handleAddItem = (item) =>{
+  const handleAddItem = (item) => {
+   
     //Dispatch a action//
     Dispatch(addItem(item));
-    
-  }
+  };
 
   return (
     <div>
@@ -29,25 +27,26 @@ const ItemList = ({ items }) => {
               </span>
               <p className="text-xs">{item?.card?.info?.description}</p>
             </div>
+          </div>
+          <div className="w-3/12 p-2">
+            <div className="absolute ">
+              <button
+                className="py-1 px-2 my-14 mx-10   bg-black text-white shadow-lg rounded-lg"
+                onClick={() => handleAddItem(item)}
+              >
+                Add
+              </button>
             </div>
-            <div className="w-3/12 p-2">
-              <div className="absolute ">
-                <button className="py-1 px-2 my-14 mx-10   bg-black text-white shadow-lg rounded-lg"
-                onClick={() => handleAddItem(item)}>
-                   Add 
-                </button>
-              </div>
-              {
-                item?.card?.info?.imageId && ( <img
-                  className=""
-                  src={CDN_FOOD_LINK + item?.card?.info?.imageId }
-                />
-                )
-              }
+            {item?.card?.info?.imageId && (
+              <img
+                
+                src={CDN_FOOD_LINK + item?.card?.info?.imageId}
+              />
+            )}
           </div>
         </div>
       ))}
-      ;
+     
     </div>
   );
 };

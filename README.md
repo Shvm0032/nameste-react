@@ -115,3 +115,8 @@ export default User;
 
   🔷Selector (from the redux store card seletor will give you data in the cart that how many item is selcted).
   # Selector is Subscribing To The Store.(selector is a redux hooks name useSlector).
+
+# Types of callback function:-
+ 🔶 onClick={() => handleAddItem(item)} 🟰 Passing a Callback function.
+ 🔶 onClick={handleAddItem(item)}🟰 Calling the function right away.
+ 🔶 onclick={handleAddItem}🟰

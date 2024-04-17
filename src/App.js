@@ -15,6 +15,7 @@ const Grocery = lazy(() => import("./component/Grocery"));
 //import provider from react-redux for create store 2nd step//
 import { Provider } from "react-redux";
 import appStore from "./utils/Redux/appStore";
+import Cart from "./component/Cart";
 
 
 //AppLayout//
@@ -65,6 +66,10 @@ const appRouter = createBrowserRouter([
         path:"/resturants/:resId",
         element:<ResturantMenu/>,
       },
+      {
+        path:"/cart",
+        element:<Cart/>,
+      }
 
     ],
     errorElement:<Error/>
