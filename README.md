@@ -114,4 +114,4 @@ export default User;
   🔶 Add(when click on the add button)➡️➡️Action (Dispatch the action)➡️➡️Call the function(Reducer)➡️➡️modify the Card(modify the Redux store ).➡️➡️Selector.
 
   🔷Selector (from the redux store card seletor will give you data in the cart that how many item is selcted).
-  # Selector is Subscribing To The Store.
+  # Selector is Subscribing To The Store.(selector is a redux hooks name useSlector).

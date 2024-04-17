@@ -1,16 +1,20 @@
 //Header Component//
 import { CDN_APP_LOGO } from "../utils/links";
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import userContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 
 
 const Header = () => {
   const [loginLogoutBtn, setLoginLogoutBtn] = useState(" Login ");
-const OnlineStatus = useOnlineStatus();
-const {loggedInUser} = useContext(userContext)
-console.log(loggedInUser);
+  const OnlineStatus = useOnlineStatus();
+  const { loggedInUser } = useContext(userContext)
+  // console.log(loggedInUser);
+   
+const cartItems = useSelector((store) => store.cart.items);
+console.log(cartItems);
 
   return (
     <div className="header flex justify-between shadow-lg p-2 py-1 h-36 sm:bg-slate-400 lg:bg-gray-300">
@@ -26,15 +30,15 @@ console.log(loggedInUser);
             <Link to="/">Home</Link>
           </li>
           <li className="px-2">
-          <Link to="/about">About Us</Link>
+            <Link to="/about">About Us</Link>
           </li>
           <li className="px-2">
-          <Link to="/contact">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           <li className="px-2">
-          <Link to="/grocery">Grocery</Link>
+            <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-2">🛒</li>
+          <li className="px-2"><button>🛒({cartItems.length})</button></li>
           <button
             className="Login-btn bg-green-400 border border-solid border-green-500 px-4 py-.1 rounded-sm"
             onClick={() => {

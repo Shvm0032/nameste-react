@@ -7,15 +7,15 @@ import About from "./component/About";
 import Contact from "./component/Contact";
 import ResturantMenu from "./component/ResturantMenu";
 import Error from "./component/Error";
-// import Grocery from "./component/Grocery";
 import { lazy,Suspense } from "react";
 import { useContext } from "react";
 import userContext from "./utils/userContext";
-
-// import Shimmer from "./component/Shimmer";
-
-
 const Grocery = lazy(() => import("./component/Grocery"));
+
+//import provider from react-redux for create store 2nd step//
+import { Provider } from "react-redux";
+import appStore from "./utils/Redux/appStore";
+
 
 //AppLayout//
 const AppLayout = () =>{
@@ -28,6 +28,7 @@ const userData ={
 setUserName(userData.name);
  },[])
   return(
+    <Provider store={appStore}>
    <userContext.Provider value={{loggedInUser:userName,setUserName}}>
     <div className="app">
       <Header/>
@@ -35,6 +36,7 @@ setUserName(userData.name);
 
     </div>
     </userContext.Provider> 
+    </Provider>
   )
 };
 
