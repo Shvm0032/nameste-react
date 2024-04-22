@@ -29,7 +29,6 @@ const ResturantCards = (props) => {
 export const withStarRating = (ResturantCards) => {
   return (props) => {
     // console.log(props);
-  
     return (
       <div>
         <label className="absolute p-2  m-1 bg-orange-400 text-white rounded-lg">

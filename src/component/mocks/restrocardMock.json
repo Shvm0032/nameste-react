@@ -1,41 +1,79 @@
 {
     "info": {
-        "id": "839278",
-        "name": "Punjabi Rasoi",
-        "cloudinaryImageId": "e688788282fcb6a6ffe6918913385ecd",
-        "locality": "SHAKAR PUR BRAMAD",
-        "areaName": "BABAR PUR",
-        "costForTwo": "₹200 for two",
+        "id": "781259",
+        "name": "Go Zero Ice Creams & Desserts",
+        "cloudinaryImageId": "29bb688aa5202c45b6cd22d570643990",
+        "locality": "MEHDIYAN MEERDARD ROAD",
+        "areaName": "CIVIL LINES",
+        "costForTwo": "₹150 for two",
         "cuisines": [
-            "Indian"
+            "Ice Cream",
+            "Desserts"
         ],
-        "parentId": "1270",
-        "avgRatingString": "NEW",
+        "avgRating": 4.5,
+        "veg": true,
+        "parentId": "343689",
+        "avgRatingString": "4.5",
+        "totalRatingsString": "8",
         "sla": {
-            "deliveryTime": 53,
-            "lastMileTravel": 7.8,
+            "deliveryTime": 35,
+            "lastMileTravel": 2.9,
             "serviceability": "SERVICEABLE",
-            "slaString": "50-55 mins",
-            "lastMileTravelString": "7.8 km",
+            "slaString": "30-35 mins",
+            "lastMileTravelString": "2.9 km",
             "iconType": "ICON_TYPE_EMPTY"
         },
         "availability": {
-            "nextCloseTime": "2024-04-20 20:00:00",
+            "nextCloseTime": "2024-04-21 00:00:00",
             "opened": true
         },
-        "badges": {},
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "v1695133679/badges/Pure_Veg111.png",
+                    "description": "pureveg"
+                }
+            ],
+            "textExtendedBadges": [
+                {
+                    "iconId": "guiltfree/GF_Logo_android_3x",
+                    "shortDescription": "brand",
+                    "fontColor": "#7E808C"
+                }
+            ]
+        },
         "isOpen": true,
         "type": "F",
         "badgesV2": {
             "entityBadges": {
-                "imageBased": {},
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "pureveg",
+                                "imageId": "v1695133679/badges/Pure_Veg111.png"
+                            }
+                        }
+                    ]
+                },
                 "textBased": {},
-                "textExtendedBadges": {}
+                "textExtendedBadges": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "",
+                                "fontColor": "#7E808C",
+                                "iconId": "guiltfree/GF_Logo_android_3x",
+                                "shortDescription": "brand"
+                            }
+                        }
+                    ]
+                }
             }
         },
         "aggregatedDiscountInfoV3": {
-            "header": "60% OFF",
-            "discountTag": "FLAT DEAL"
+            "header": "ITEMS",
+            "subHeader": "AT ₹59"
         },
         "orderabilityCommunication": {
             "title": {},
@@ -57,10 +95,10 @@
         "restaurantOfferPresentationInfo": {}
     },
     "analytics": {
-        "context": "seo-data-a0afbce1-4d1f-42ee-ab8a-17211d94f83f"
+        "context": "seo-data-c9178c4a-7bff-4869-9cd8-67a4f9a5a02f"
     },
     "cta": {
-        "link": "https://www.swiggy.com/restaurants/punjabi-rasoi-shakar-pur-bramad-babar-pur-delhi-839278",
+        "link": "https://www.swiggy.com/restaurants/go-zero-ice-creams-and-desserts-mehdiyan-meerdard-road-civil-lines-delhi-781259",
         "text": "RESTAURANT_MENU",
         "type": "WEBLINK"
     },
