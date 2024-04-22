@@ -120,3 +120,32 @@ export default User;
  🔶 onClick={() => handleAddItem(item)} 🟰 Passing a Callback function.
  🔶 onClick={handleAddItem(item)}🟰 Calling the function right away.
  🔶 onclick={handleAddItem}🟰
+
+ # Immer is a library of redux which help redux to identityfy the original state.So that we do mutate the state .
+
+ # Types of testing (Devloper):-
+ 1-Unit Testing.
+ 2-Integration testing.
+ 3-End-toEnd testing(e2e Testing).
+
+# Setting up testing in our aap:-
+- Install React Testing Library.
+- Install jest
+- Install Babel Dependencies
+- create a folder name with babel.config.js and add code from  jest website(Babel configuration).
+- create a folder name .parcelrc" with  to disable default babel transpilation from , parcel.com->javascript->babel (Parcel configuration).
+- jest configuration(npx jest --init).
+- install jest envirnment jsdom library(npm i -D jest-environment-jsdom or npm i --save-dev jest-environment-jsdom ).
+- Install @babel/preset-react (to make jsx in test cases).
+- Include @babel/preset-react inside the babel config.
+- Install @testing-library/jest-dom.
+
+# note:-
+test = it
+- test("test cases for all the component",() => { }) or
+- it("test cases for all the component",() => { })
+BOTH ARE SAME ....
+
+
+
+

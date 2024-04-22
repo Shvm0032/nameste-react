@@ -9,7 +9,7 @@ const User = (props) => {
     const data = await fetch(GITHUB_USER_DATA);
     const json = await data.json();
     setGitData(json)
-    console.log(json);
+    // console.log(json);
   };
 
   const {name,location,company,avatar_url,bio,id} = gitData;

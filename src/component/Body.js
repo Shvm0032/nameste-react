@@ -20,6 +20,7 @@ const Body = () => {
   const OnlineStatus = useOnlineStatus();
   const {setUserName,loggedInUser} = useContext(userContext);
   
+  // console.log(filteredRestro,'im here');
 
   if (OnlineStatus === false)
     return (
@@ -29,9 +30,9 @@ const Body = () => {
         </center>
       </div>
     );
-  console.log(listofRestro);
+  // console.log(listofRestro);
 
-  return listofRestro.length === 0 ? (
+  return listofRestro?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">

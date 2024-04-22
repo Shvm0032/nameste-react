@@ -12,7 +12,7 @@ const Header = () => {
   const { loggedInUser } = useContext(userContext);
 
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="header flex justify-between shadow-lg p-2 py-1 h-36 sm:bg-slate-400 lg:bg-gray-300">
@@ -29,7 +29,7 @@ const Header = () => {
             <Link to="/about">About Us</Link>
           </li>
           <li className="px-2">
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact">Contact Us</Link>
           </li>
           <li className="px-2">
             <Link to="/grocery">Grocery</Link>

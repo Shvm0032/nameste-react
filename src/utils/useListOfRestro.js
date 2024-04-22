@@ -8,6 +8,7 @@ const useListOfRestro = () => {
   useEffect(() => {
     fetchRestro();
   }, []);
+  
   const fetchRestro = async () => {
     const data = await fetch(LIST_RESTRO_API);
     const json = await data.json();
